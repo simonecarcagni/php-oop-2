@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../Traits/Porpic.php';
+require_once __DIR__ . '/../Traits/Propic.php';
 
 class User {
 

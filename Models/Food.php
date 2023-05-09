@@ -7,10 +7,10 @@ class Food extends Product{
 
     public $calories;
 
-    public function __construct(string $name, int $price, Category $category, int $stock, string $image, int $calories){
+    public function __construct(string $name, int $price, Category $category, int $stock, int $calories){
         $this->calories = $calories;
 
-        parent::__construct($name, $price, $category, $stock, $image, $stock);
+        parent::__construct($name, $price, $category, $stock, $stock);
     }
 
     public function getClassName(){

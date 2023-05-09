@@ -8,11 +8,22 @@ require_once __DIR__ . '/Models/Toy.php';
 $cat = new Category('Gatto','fa-solid fa-cat');
 $dog = new Category('Cane','fa-solid fa-dog');
 
-$collar = new Product('Collare', 10, $dog, 40, '/img/dog-collar.jpg');
+$collar = new Product('Collare', 10, $dog, 40);
 
-$kibble = new Food('Croccantini', 15, $cat, 10, '/img/dog-fod.jpg', 300);
+$collar->setPictureUrl('https://picsum.photos/400/300');
 
-$ball = new Toy('Pallina', 12, $dog, 20, '/img/dog-ball.jpg', 'Gomma');
+$kibble = new Food('Croccantini', 15, $cat, 10, 300);
+
+try {
+    $kibble->setPictureUrl('picsum.photos/400/300');
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+
+
+$ball = new Toy('Pallina', 12, $dog, 20, 'Gomma');
+
+$ball->setPictureUrl('https://picsum.photos/400/300');
 
 $productList = [
     $collar,
@@ -45,7 +56,7 @@ $productList = [
                 <?php foreach($productList as $product){ ?>
                 <div class="col-4 m-auto">
                     <div class="card">
-                        <img src="<?php echo $product->image; ?>" class="card-img-top" alt="<?php echo $product->name; ?>">
+                        <img src="<?php echo $product->getPictureUrl(); ?>" class="card-img-top" alt="<?php echo $product->name; ?>">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <?php echo $product->name; ?>

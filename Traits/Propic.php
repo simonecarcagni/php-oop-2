@@ -10,7 +10,7 @@ trait Propic {
 
     public function setPictureUrl($url){
         if(!str_contains($url, 'http')){
-                throw Exception("L'url deve inizare con http");
+            throw new Exception("L'url deve inizare con http");
         } else {
             $this->image_url = $url;
         }
