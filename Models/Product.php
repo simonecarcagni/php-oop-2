@@ -1,8 +1,11 @@
 <?php
 
 require_once __DIR__ . '/Category.php';
+require_once __DIR__ . '/../Traits/Porpic.php';
 
 class Product {
+
+    use Propic;
 
     public $name;
     public $price;

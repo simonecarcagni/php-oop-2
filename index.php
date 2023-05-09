@@ -52,7 +52,7 @@ $productList = [
                             </h5>
                             <p class="card-text">
                                 <i class="<?php echo $product->category->icon; ?>"></i>
-                                <?php echo 'Prezzo:' . ' ' . $product->price; ?>  € -
+                                <?php echo 'Prezzo:' . ' ' . $product->price; ?>  € -  
                                 <?php echo $product->getClassName();?>
                             </p>
                         </div>
